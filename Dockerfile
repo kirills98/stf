@@ -71,7 +71,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     rm -rf .npm .cache .config .local && \
     cd /app; \
   fi
-  
+
 RUN if [ "$TARGETARCH" = "arm64" ]; then \
     export DEBIAN_FRONTEND=noninteractive && \
     echo '--- Updating repositories' && \
@@ -112,7 +112,7 @@ RUN if [ "$TARGETARCH" = "arm64" ]; then \
     mkdir -p /app/bundletool && \
     mv bundletool-all-1.2.0.jar /app/bundletool/bundletool.jar && \
     mv node_modules /app && \
-    chown -R root:root /app && \
+    chown -R stf:stf /app && \
     echo '--- Cleaning up' && \
     echo 'npm cache clean --force' | su stf -s /bin/bash && \
     rm -rf ~/.node-gyp && \
