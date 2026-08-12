@@ -69,6 +69,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
       .eslintrc .nvmrc .tool-versions res/.eslintrc && \
     cd && \
     rm -rf .npm .cache .config .local && \
+    chown -R stf:stf /app && \
     cd /app; \
   fi
 
